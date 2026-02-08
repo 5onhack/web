@@ -1,57 +1,126 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Finalizar Compra - SolanBeat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="logo_solanbeat1.jpeg">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+
+    <style>
+        :root {
+            --solan-blue: #1a5b7a;
+            --solan-dark: #14465e;
+            --solan-light: #f8f9fa;
+        }
+
+        body { font-family: 'Roboto', sans-serif; background-color: var(--solan-light); }
+        .text-solan { color: var(--solan-blue) !important; }
+        .bg-solan { background-color: var(--solan-blue) !important; }
+        
+        .card { border-radius: 15px; border: none; }
+        .table thead { background-color: var(--solan-blue); color: white; }
+        
+        /* Estilo para la lista de métodos de pago */
+        .metodo-item {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        .metodo-item i { width: 30px; color: var(--solan-blue); }
+        .metodo-item:last-child { border-bottom: none; }
+    </style>
 </head>
-<body class="bg-light">
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm bg-white">
+        <div class="container d-flex justify-content-between">
+            <a class="navbar-brand text-solan logo h1" href="index.html">
+                <img src="./assets/img/logo_solanbeat1.jpeg" height="55" alt="SolanBeat">
+            </a>
+            <a href="index.html" class="btn btn-outline-secondary btn-sm rounded-pill">
+                <i class="fa fa-arrow-left"></i> Volver a la tienda
+            </a>
+        </div>
+    </nav>
+
     <div class="container py-5">
-        <div class="row">
-            <div class="col-md-8">
-                <div class="card shadow p-4">
-                    <h3>Tu Pedido</h3>
-                    <table class="table" id="cart-items-table">
-                        <thead>
-                            <tr>
-                                <th>Producto</th>
-                                <th>Precio</th>
-                                <th>Cant.</th>
-                                <th>Subtotal</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            </tbody>
-                    </table>
+        <div class="row g-4">
+            
+            <div class="col-lg-8">
+                <div class="card shadow-sm p-4">
+                    <h3 class="h4 mb-4 fw-bold text-solan">Tu Pedido</h3>
+                    <div class="table-responsive">
+                        <table class="table align-middle" id="cart-items-table">
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Precio</th>
+                                    <th class="text-center">Cant.</th>
+                                    <th>Subtotal</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody class="border-top-0">
+                                </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card shadow p-4">
-                    <h4>Total: <span id="cart-total">$0.00</span></h4>
-                    <hr>
-                    <p><strong>Método de Pago:</strong> Pago Móvil Provincial</p>
-                    <button id="btn-whatsapp" class="btn btn-success w-100 mt-3">
-                        Pedir por WhatsApp
+
+            <div class="col-lg-4">
+                <div class="card shadow-sm p-4 mb-4">
+                    <h4 class="fw-bold mb-3">Resumen</h4>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Subtotal:</span>
+                        <span id="cart-subtotal" class="fw-bold">$0.00</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-4 border-top pt-2">
+                        <span class="h5">Total:</span>
+                        <span id="cart-total" class="h5 fw-bold text-solan">$0.00</span>
+                    </div>
+
+                    <p class="small fw-bold text-muted text-uppercase mb-2">Métodos Disponibles:</p>
+                    <div class="bg-light rounded p-2 mb-4">
+                        <div class="metodo-item"><i class="fas fa-mobile-alt"></i> Pago Móvil</div>
+                        <div class="metodo-item"><i class="fas fa-dollar-sign"></i> Divisas / Efectivo</div>
+                        <div class="metodo-item"><i class="fas fa-university"></i> Binance Pay</div>
+                        <div class="metodo-item"><i class="fab fa-paypal"></i> PayPal</div>
+                    </div>
+
+                    <button id="btn-whatsapp" class="btn btn-success btn-lg w-100 shadow-sm rounded-pill">
+                        <i class="fab fa-whatsapp me-2"></i> Pedir por WhatsApp
                     </button>
                 </div>
             </div>
+
         </div>
     </div>
 
+    <footer class="bg-dark py-4 mt-5">
+        <div class="container text-center text-light">
+            <p class="mb-0">SolanBeat | Caracas, Venezuela</p>
+        </div>
+    </footer>
+
     <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="carrito.js"></script>
     <script>
-        // Lógica del botón de WhatsApp
         document.getElementById('btn-whatsapp').addEventListener('click', () => {
             const carrito = JSON.parse(localStorage.getItem('carrito_solanbeat')) || [];
-            if(carrito.length === 0) return alert("Carrito vacío");
+            if(carrito.length === 0) return alert("Tu carrito está vacío");
 
-            let texto = "Hola SolanBeat! Mi pedido es:%0A";
-            carrito.forEach(i => texto += `- ${i.nombre} (x${i.cantidad})%0A`);
+            let texto = "Hola *SolanBeat*! Mi pedido es:%0A%0A";
+            carrito.forEach(i => texto += `• ${i.nombre} (x${i.cantidad})%0A`);
             texto += "%0A*Total:* " + document.getElementById('cart-total').innerText;
+            texto += "%0A%0APor favor, envíenme los datos para concretar el pago.";
 
             window.open(`https://wa.me/584241374931?text=${texto}`, '_blank');
         });
