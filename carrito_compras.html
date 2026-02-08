@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Finalizar Compra - SolanBeat</title>
+    <link rel="icon" type="image/x-icon" href="logo_solanbeat1.jpeg">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card shadow p-4">
+                    <h3>Tu Pedido</h3>
+                    <table class="table" id="cart-items-table">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                                <th>Cant.</th>
+                                <th>Subtotal</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow p-4">
+                    <h4>Total: <span id="cart-total">$0.00</span></h4>
+                    <hr>
+                    <p><strong>Método de Pago:</strong> Pago Móvil Provincial</p>
+                    <button id="btn-whatsapp" class="btn btn-success w-100 mt-3">
+                        Pedir por WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="carrito.js"></script>
+    <script>
+        // Lógica del botón de WhatsApp
+        document.getElementById('btn-whatsapp').addEventListener('click', () => {
+            const carrito = JSON.parse(localStorage.getItem('carrito_solanbeat')) || [];
+            if(carrito.length === 0) return alert("Carrito vacío");
+
+            let texto = "Hola SolanBeat! Mi pedido es:%0A";
+            carrito.forEach(i => texto += `- ${i.nombre} (x${i.cantidad})%0A`);
+            texto += "%0A*Total:* " + document.getElementById('cart-total').innerText;
+
+            window.open(`https://wa.me/584241374931?text=${texto}`, '_blank');
+        });
+    </script>
+</body>
+</html>

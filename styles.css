@@ -1,0 +1,136 @@
+/* Estilos básicos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #333;
+  text-align: center; /* Centra texto globalmente */
+}
+
+h1, h2, p {
+  text-align: center;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+  margin: 10px auto; /* Centra el botón */
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Pantalla de bienvenida */
+.welcome-screen {
+  background-color: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.auth-form {
+  margin-top: 20px;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+/* Sección de publicidad */
+.ads {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.ad-banner {
+  background-color: #e4e4e4;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.ad-banner button {
+  display: block;
+  margin: 10px auto; /* Centra el botón */
+  background-color: #ffbb33;
+}
+
+/* Contenido centrado */
+.content {
+  display: none;
+  text-align: center;
+  padding: 20px;
+}
+
+.content.active {
+  display: block;
+}
+
+/* Centrar el navegador Wikipedia */
+#internet-access {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#internet-access iframe {
+  border: none;
+  width: 800px;
+  height: 600px;
+}
+
+/* Panel Admin */
+#admin-panel {
+  background-color: #f3f3f3;
+  padding: 30px;
+  border-radius: 12px;
+  margin-top: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.admin-stats p {
+  font-size: 18px;
+  margin-bottom: 12px;
+}

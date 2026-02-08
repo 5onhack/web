@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>SolanBeat - Accesorios para iPhone</title>
+    <link rel="icon" type="image/x-icon" href="logo_solanbeat1.jpeg">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <style>
+        /* Personalización con el color azul de tu logo SolanBeat */
+        .text-solan { color: #1a5b7a !important; }
+        .bg-solan { background-color: #1a5b7a !important; }
+        .btn-solan { background-color: #1a5b7a; color: white; border: none; }
+        .btn-solan:hover { background-color: #14465e; color: white; }
+        .navbar-brand img { max-height: 100px; }
+        .card-img-top { object-fit: contain; padding: 20px; background: #fff; height: 300px; }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
+                <img src="./assets/img/logo_solanbeat1.jpeg" alt="" style="width: 100px;">
+            </a>
+            <div class="navbar align-self-center d-flex">
+                <a class="nav-icon position-relative text-decoration-none" href="carrito_compras.html">
+                    <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                    <span id="cart-count" class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-danger text-white">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container py-5">
+        <div class="row text-center pt-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1">Nuestros Productos</h1>
+                <p>La mejor energía para tu iPhone.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4 p-5 mt-3 text-center">
+                <img src="./assets/img/2c.jpeg" class="rounded-circle img-fluid border">
+                <h5 class="text-center mt-3 mb-3">Cargador 20W</h5>
+                <p class="text-center">$25.00</p>
+                <button class="btn btn-success" onclick="addToCart({id:'c20w', name:'Cargador 20W', price:25, image:'./assets/img/2c.jpeg'})">Agregar</button>
+            </div>
+
+            <div class="col-12 col-md-4 p-5 mt-3 text-center">
+                <img src="./assets/img/1i.jpeg" class="rounded-circle img-fluid border">
+                <h2 class="h5 text-center mt-3 mb-3">Power Bank Magsafe</h2>
+                <p class="text-center">$45.00</p>
+                <button class="btn btn-success" onclick="addToCart({id:'pbmag', name:'Power Bank Magsafe', price:45, image:'./assets/img/1i.jpeg'})">Agregar</button>
+            </div>
+
+            <div class="col-12 col-md-4 p-5 mt-3 text-center">
+                <img src="./assets/img/5c.jpeg" class="rounded-circle img-fluid border">
+                <h2 class="h5 text-center mt-3 mb-3">Cable USB-C 1M</h2>
+                <p class="text-center">$15.00</p>
+                <button class="btn btn-success" onclick="addToCart({id:'cabc', name:'Cable USB-C 1M', price:15, image:'./assets/img/5c.jpeg'})">Agregar</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-light py-5">
+        <div class="container text-center">
+            <p>Copyright &copy; 2026 SolanBeat</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="carrito.js"></script>
+</body>
+</html>
