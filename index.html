@@ -13,8 +13,8 @@
     <style>
         /* Personalización con el color azul de tu logo SolanBeat */
         .text-solan { color: #1a5b7a !important; }
-        .bg-solan { background-color: #1a5b7a !important; }
-        .btn-solan { background-color: #1a5b7a; color: white; border: none; }
+        .bg-solan { background-color: #0078af !important; }
+        .btn-solan { background-color: #1a5b7a; color: rgb(190, 190, 190); border: none; }
         .btn-solan:hover { background-color: #14465e; color: white; }
         .navbar-brand img { max-height: 100px; }
         .card-img-top { object-fit: contain; padding: 20px; background: #fff; height: 300px; }
@@ -25,7 +25,8 @@
     <nav class="navbar navbar-expand-lg navbar-light shadow">
         <div class="container d-flex justify-content-between align-items-center">
             <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
-                <img src="./assets/img/logo_solanbeat1.jpeg" alt="" style="width: 100px;">
+                <img src="./assets/img/logo_solanbeat1.jpeg" alt="" style="width: 100px;" >
+                
             </a>
             <div class="navbar align-self-center d-flex">
                 <a class="nav-icon position-relative text-decoration-none" href="carrito_compras.html">
@@ -46,23 +47,23 @@
         <div class="row">
             <div class="col-12 col-md-4 p-5 mt-3 text-center">
                 <img src="./assets/img/2c.jpeg" class="rounded-circle img-fluid border">
-                <h5 class="text-center mt-3 mb-3">Cargador 20W</h5>
-                <p class="text-center">$25.00</p>
-                <button class="btn btn-success" onclick="addToCart({id:'c20w', name:'Cargador 20W', price:25, image:'./assets/img/2c.jpeg'})">Agregar</button>
+                <h5 class="text-center mt-3 mb-3">Cable + Taco 20W</h5>
+                <p class="text-center">$10.00</p>
+                <button class="btn btn-success" onclick="addToCart({id:'c20w', name:'Cargador 20W', price:10, image:'./assets/img/2c.jpeg'})">Agregar</button>
             </div>
 
             <div class="col-12 col-md-4 p-5 mt-3 text-center">
                 <img src="./assets/img/1i.jpeg" class="rounded-circle img-fluid border">
-                <h2 class="h5 text-center mt-3 mb-3">Power Bank Magsafe</h2>
-                <p class="text-center">$45.00</p>
-                <button class="btn btn-success" onclick="addToCart({id:'pbmag', name:'Power Bank Magsafe', price:45, image:'./assets/img/1i.jpeg'})">Agregar</button>
+                <h2 class="h5 text-center mt-3 mb-3">Power Bank Magsafe 5000mah</h2>
+                <p class="text-center">$25.00</p>
+                <button class="btn btn-success" onclick="addToCart({id:'pbmag', name:'Power Bank Magsafe', price:25, image:'./assets/img/1i.jpeg'})">Agregar</button>
             </div>
 
             <div class="col-12 col-md-4 p-5 mt-3 text-center">
                 <img src="./assets/img/5c.jpeg" class="rounded-circle img-fluid border">
-                <h2 class="h5 text-center mt-3 mb-3">Cable USB-C 1M</h2>
-                <p class="text-center">$15.00</p>
-                <button class="btn btn-success" onclick="addToCart({id:'cabc', name:'Cable USB-C 1M', price:15, image:'./assets/img/5c.jpeg'})">Agregar</button>
+                <h2 class="h5 text-center mt-3 mb-3">agotado</h2>
+                <p class="text-center">$10.00</p>
+                <button class="btn btn-success" onclick="addToCart({id:'cabc', name:'Cable USB-C 1M', price:10, image:'./assets/img/5c.jpeg'})">Agregar</button>
             </div>
         </div>
     </section>
@@ -76,5 +77,44 @@
     <script src="assets/js/jquery-1.11.0.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="carrito.js"></script>
+
+    <footer class="bg-dark" id="tempaltemo_footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-solan border-bottom pb-3 border-light logo">SolanBeat</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><i class="fas fa-map-marker-alt fa-fw"></i> Tienda Online - Envíos a nivel nacional  - <strong>📍 Delivery en Caracas</strong></li>
+                        <li><i class="fa fa-phone fa-fw"></i> <a class="text-decoration-none" href="tel:04241374931">+58-424-137-4931</a></li>
+                        <li><i class="fa fa-envelope fa-fw"></i> <a class="text-decoration-none" href="mailto:info@solanbeat.com">info@solanbeat.com</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Productos</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="#">Cargadores 20W  cable + taco</a></li>
+                        <li><a class="text-decoration-none" href="#">Cables USB-C a Lightning</a></li>
+                        <li><a class="text-decoration-none" href="#">Cables USB-C a C</a></li>
+                        <li><a class="text-decoration-none" href="#">Power Banks MagSafe</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Más información</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="index.html">Inicio</a></li>
+                        <li><a class="text-decoration-none" href="about.html">Nosotros</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-100 bg-black py-3">
+            <div class="container text-center text-light">
+                <p>Copyright &copy; 2026 SolanBeat | Energía para tu iPhone</p>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>
